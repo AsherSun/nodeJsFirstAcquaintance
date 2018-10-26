@@ -6,7 +6,7 @@ function start(route, resHandle) {
     if (request.url === '/favicon.ico') { return false }
     route(request.url, resHandle, function(body, contentType = "text/plain") {
       response.writeHead(404, {"Content-Type": contentType});
-      response.write(body);
+      response.write(body, 'utf8');
       response.end();
     })
   }).listen(8888);

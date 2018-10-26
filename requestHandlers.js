@@ -6,16 +6,14 @@ function start(response) {
   //   while(new Date().getTime() < startTime + milliSeconds);
   // }
   // sleep(10000)
-  var content = 'empty'
-  exec('dir', (err, stdout) => {
-    console.log('stdout: ', typeof stdout)
-    content += stdout
+  exec('dir',{ encoding: 'utf8' }, (err, stdout) => {
+    response(stdout)
   })
-  return 'Request handler "start" was called.' + content
+  // return 'Request handler "start" was called.' + content
 }
 
 function upload(response) {
-  return 'Request handler "upload" was called.'
+  response('Request handler "upload" was called.')
 }
 module.exports = {
   start,
