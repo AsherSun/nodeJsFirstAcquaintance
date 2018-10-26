@@ -8,12 +8,16 @@ function start(response) {
       return 'okay'
     }
     sleep(10000)
-    response(stdout)
+    response.writeHead(404, {"Content-Type": 'text/plain'});
+    response.write(stdout, 'utf8');
+    response.end();
   })
 }
 
 function upload(response) {
-  response('Request handler "upload" was called.')
+  response.writeHead(404, {"Content-Type": 'text/plain'});
+  response.write('Request handler "upload" was called.', 'utf8');
+  response.end();
 }
 
 module.exports = {
