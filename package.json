@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-first-acquaintace",
+  "version": "1.0.0",
+  "description": "nodeJs入门到高级入门",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsherSun/nodeJsFirstAcquaintance.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "asher sun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsherSun/nodeJsFirstAcquaintance/issues"
+  },
+  "homepage": "https://github.com/AsherSun/nodeJsFirstAcquaintance#readme"
+}
