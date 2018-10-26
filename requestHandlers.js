@@ -1,6 +1,7 @@
 
 const querystring = require('querystring');
 const fs = require('fs');
+var mutipart = require('connect-multiparty');
 
 function start(response) {
   let body = `
@@ -10,7 +11,6 @@ function start(response) {
       </head>
       <body>
         <form action="/upload" method="post" enctype="multipart/form-data">
-          <textarea name="text" id="" cols="30" rows="10"></textarea>
           <input type="file" name="upload"/>
           <input type="submit" value="Submit text"/>
         </form>
@@ -20,18 +20,19 @@ function start(response) {
   response(body, 'text/html');
 }
 
-function upload(response, data) {
-  response('message: '  + querystring.parse(data).text, 'text/plain')
+function upload(response, request) {
+  console.log(request)
+  response('sdfsf')
 }
 
-function show(response, data) {
-  fs.readFile('/tmp/test.png', 'binary', function(err, file) {
-    if (error) {
-      response(err + '\n');
-    } else {
-      response(file, 'binary')
-    }
-  })
+function show(response) {
+  // fs.readFile('/tmp/test.png', 'binary', function(err, file) {
+  //   if (error) {
+  //     response(err + '\n');
+  //   } else {
+  //     response(file, 'binary')
+  //   }
+  // })
 }
 
 module.exports = {

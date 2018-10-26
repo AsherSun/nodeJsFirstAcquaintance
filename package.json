@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/AsherSun/nodeJsFirstAcquaintance#readme",
   "dependencies": {
-    "formidable": "^1.2.1"
+    "connect-multiparty": "^2.2.0"
   }
 }
