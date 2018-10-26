@@ -4,9 +4,11 @@ const url = require('url')
 function start(route, resHandle) {
   http.createServer((request, response) => {
     if (request.url === '/favicon.ico') { return false }
-    response.writeHead(200, {'Content-Type': "text/plain"});
-    response.write(route(request.url, resHandle));
-    response.end();
+    route(request.url, resHandle, function(body, contentType = "text/plain") {
+      response.writeHead(404, {"Content-Type": contentType});
+      response.write(body);
+      response.end();
+    })
   }).listen(8888);
 }
 

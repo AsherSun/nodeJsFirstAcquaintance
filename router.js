@@ -1,7 +1,9 @@
-module.exports = function(path, resHandle) {
+module.exports = function(path, resHandle, response) {
 if (typeof resHandle[path] === 'function') {
-    return resHandle[path]()
+    return resHandle[path](response)
   } else {
-    return '404 Not found' +  resHandle['/start']()
+    response.writeHead(404, {"Content-Type": "text/plain"});
+    response.write('404 Not found' +  resHandle['/start']());
+    response.end();
   }
 }
